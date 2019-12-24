@@ -2,6 +2,10 @@
   margin: 20px;
 }
 
+.inputText {
+  margin-top: 20px;
+}
+
 #root button:first-child {
   margin: 20px 10px;
 }

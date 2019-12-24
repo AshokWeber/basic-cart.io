@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./Components/navbar";
 import Counters from "./Components/Counters";
+import Inputnum from "./Components/input";
 class App extends Component {
   state = {
     counters: [
@@ -46,16 +47,19 @@ class App extends Component {
     counters[index].value--;
     this.setState({ counters });
   };
+  value = () => {
+    let getCurrentValue = this.state.counters.filter(c => c.value > 0).length;
+    return getCurrentValue;
+  };
   render() {
     //React LifeCycle Hooks
     console.log("APP - Rendered");
     //End of React LIfecycle Hooks
     return (
       <React.Fragment>
-        <NavBar
-          totalcounters={this.state.counters.filter(c => c.value > 0).length}
-        />
+        <NavBar totalcounters={this.value()} />
         <main className="container">
+          <Inputnum getValue={this.value()}></Inputnum>
           <Counters
             counters={this.state.counters}
             onReset={this.handleReset}
