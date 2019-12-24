@@ -8,10 +8,14 @@ const NavBar = props => {
   return (
     <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand">
-        Total Carts is:{" "}
+        <span>Total Carts Enabled are : </span>
         <span className="badge badge-pill badge-secondary">
           {props.totalcounters}
         </span>
+        <p>
+          -- This shows how many carts were enabled. As of now there are 4 carts
+          available now.
+        </p>
       </a>
     </nav>
   );
